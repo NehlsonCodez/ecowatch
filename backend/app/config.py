@@ -5,7 +5,13 @@ Loads configuration from environment variables with safe defaults.
 import os
 
 # --- Auth ---
-SECRET_KEY = os.getenv("SECRET_KEY", "ecowatch-super-secret-key-change-this-in-production-0xDEADBEEF")
+SECRET_KEY = (
+    os.getenv("SECRET_KEY")
+    or os.getenv("SECRETKEY")
+    or os.getenv("secretkey")
+    or os.getenv("SecretKey")
+    or "ecowatch-super-secret-key-change-this-in-production-0xDEADBEEF"
+)
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", str(60 * 24)))  # 24 hours
 
