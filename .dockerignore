@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+.git
+.gitignore
+*.db
+*.sqlite3
+ecowatch.db
+backend/ecowatch.db
+backend/venv/
